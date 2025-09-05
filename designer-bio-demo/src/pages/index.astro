@@ -1,0 +1,16 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import DarkModeToggle from '../components/DarkModeToggle.astro';
+import ProfileCard from '../components/ProfileCard.astro';
+import PortfolioGrid from '../components/PortfolioGrid.astro';
+---
+<BaseLayout title="Jane Doe – Designer Bio.fm Style Profile" description="Portfolio and designer profile of Jane Doe, product designer and visual storyteller.">
+  <DarkModeToggle />
+  <main class="flex flex-col min-h-screen items-center justify-start py-8">
+    <ProfileCard />
+    <PortfolioGrid />
+    <footer class="w-full text-center mt-16 mb-4 opacity-60 text-sm">
+      <span>&copy; {new Date().getFullYear()} Jane Doe — Designed with <span class="text-primary">&#10084;&#65039;</span> via Astro</span>
+    </footer>
+  </main>
+</BaseLayout>

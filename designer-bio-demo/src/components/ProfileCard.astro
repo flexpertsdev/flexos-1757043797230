@@ -1,0 +1,26 @@
+---
+const links = [
+  { name: 'Website', url: 'https://janedesign.com', icon: '🌐' },
+  { name: 'Twitter', url: 'https://twitter.com/janedesign', icon: '🐦' },
+  { name: 'Dribbble', url: 'https://dribbble.com/janedesign', icon: '🏀' },
+  { name: 'LinkedIn', url: 'https://linkedin.com/in/janedesign', icon: '💼' },
+];
+---
+<section class="w-full max-w-xl mx-auto rounded-2xl shadow-lg bg-white/70 dark:bg-zinc-800/70 border border-zinc-200 dark:border-zinc-700 p-8 pt-14 flex flex-col items-center gap-6 mt-8">
+  <img src="/src/assets/profile.jpg" alt="Profile photo of Jane Doe the designer" class="w-28 h-28 object-cover rounded-full border-4 border-primary dark:border-zinc-700 shadow-lg -mt-20 bg-zinc-100 dark:bg-zinc-800" loading="eager" />
+  <h1 class="text-2xl md:text-3xl font-bold tracking-tight">Jane Doe</h1>
+  <p class="text-md text-zinc-600 dark:text-zinc-400 text-center max-w-md">Product Designer & Visual Storyteller. I believe design can change the world. Currently at <a href="https://figma.com" target="_blank" rel="noopener noreferrer" class="underline text-primary">Figma</a>. Exploring UI, web animation & inclusive product experiences.</p>
+  <div class="flex gap-3 mt-1">
+    {links.map(link => (
+      <a
+        href={link.url}
+        class="bg-primary text-white px-4 py-2 rounded-full text-sm flex items-center gap-2 hover:bg-indigo-700 focus-visible:ring focus-visible:ring-primary transition"
+        target="_blank" rel="noopener noreferrer"
+        aria-label={`Visit ${link.name}`}
+      >
+        <span>{link.icon}</span>
+        {link.name}
+      </a>
+    ))}
+  </div>
+</section>

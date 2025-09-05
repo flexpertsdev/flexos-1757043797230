@@ -1,0 +1,32 @@
+---
+const projects = [
+  {
+    title: 'Brand Redesign for InVision',
+    image: '/src/assets/portfolio1.jpg',
+    url: 'https://www.invisionapp.com/',
+  },
+  {
+    title: 'Mobile UI Kit (Freebie)',
+    image: '/src/assets/portfolio2.jpg',
+    url: 'https://www.figma.com/community/file/000',
+  },
+  {
+    title: 'UX Animation Demo',
+    image: '/src/assets/portfolio3.jpg',
+    url: 'https://www.behance.net/gallery/000',
+  },
+];
+---
+<section aria-labelledby="portfolio-title" class="mt-12 w-full max-w-3xl mx-auto">
+  <h2 id="portfolio-title" class="text-xl font-semibold mb-6 text-zinc-900 dark:text-white">Portfolio Projects</h2>
+  <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+    {projects.map((p) => (
+      <a href={p.url} target="_blank" rel="noopener noreferrer" class="group block rounded-xl overflow-hidden shadow-md bg-white/80 dark:bg-zinc-800/80 border border-zinc-200 dark:border-zinc-700 hover:scale-[1.025] hover:shadow-lg focus-visible:ring-2 focus-visible:ring-primary transition-all outline-none">
+        <img src={p.image} alt={p.title} class="h-40 w-full object-cover group-hover:opacity-90 transition" loading="lazy" />
+        <div class="p-4">
+          <h3 class="font-semibold text-md group-hover:text-primary transition-colors">{p.title}</h3>
+        </div>
+      </a>
+    ))}
+  </div>
+</section>

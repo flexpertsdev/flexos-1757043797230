@@ -1,0 +1,19 @@
+---
+const toggleTheme = () => {
+  if (typeof window !== "undefined") {
+    const html = document.documentElement;
+    if (html.classList.contains('dark')) {
+      html.classList.remove('dark');
+      localStorage.theme = 'light';
+    } else {
+      html.classList.add('dark');
+      localStorage.theme = 'dark';
+    }
+  }
+};
+---
+<button aria-label="Toggle Dark Mode" class="fixed right-4 top-4 z-50 bg-zinc-200 dark:bg-zinc-800 rounded-full p-2 shadow hover:scale-110 transition-transform" onclick={toggleTheme}>
+  <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-zinc-700 dark:text-zinc-200" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 3v1m0 16v1m8.66-12.34l-.71.71M4.05 19.95l-.71.71M21 12h1M3 12H2m16.95 7.05l.71.71M4.05 4.05l.71.71" />
+  </svg>
+</button>
